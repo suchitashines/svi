@@ -5,22 +5,15 @@
         <div class="footer-menu">
           <ul>
             {{ range site.Menus.footer }}
-            <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+            <li><a href="{{.URL}}">{{ .Name }}</a></li>
             {{ end }}
           </ul>
         </div>
-        <p class="copyright">{{ site.Params.copyright | markdownify }}</p>
+        <p class="copyright">{{ site.Copyright | markdownify }}</p>
       </div>
     </div>
   </div>
 </footer>
-
-<!-- Google Maps API -->
-{{ if site.Params.gmap.enable }}
-{{ if ("contact/" | relLangURL | eq .RelPermalink) }}
-<script defer src="https://maps.googleapis.com/maps/api/js?key={{ site.Params.gmap.gmap_api }}&libraries=places"></script>
-{{ end }}
-{{ end }}
 
 <!-- JS plugins -->
 {{ range site.Params.plugins.js }}
@@ -28,7 +21,7 @@
 {{ end }}
 
 <!-- Main script -->
-{{ $script := slice (resources.Get "js/script.js") (resources.Get "js/custom.js") | resources.Concat "js/bundled.js" | minify }}
+{{ $script := resources.Get "js/script.js" | minify }}
 <script src="{{ $script.RelPermalink }}"></script>
 
 <!-- Cookie -->

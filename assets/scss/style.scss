@@ -59,3 +59,20 @@
 @import 'templates/_message-sent.scss';
 
 @import 'templates/_footer.scss';
+
+.icon {
+    height: 1em;
+    width: auto;
+}
+
+.service-item {
+    .icon {
+        height: 4em;
+    }
+}
+
+.social-icons {
+    .icon {
+    height: 2em;
+    }
+}

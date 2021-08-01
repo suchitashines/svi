@@ -27,6 +27,17 @@
 }
 
 .portfolio {
+  h2 {
+    color: $light;
+    margin: 0px;
+    padding: 30px 0px;
+  }
+
+  p {
+    color: $light;
+  }
+
+
   &-item {
     position: relative;
     padding: 0;

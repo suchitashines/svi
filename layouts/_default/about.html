@@ -3,7 +3,6 @@
 {{ partial "page-title.html" . }}
 
 {{ with .Params.about }}
-{{ if .enable }}
 <section class="about section">
   <div class="container">
     <div class="row">
@@ -16,30 +15,15 @@
         {{ with .title }}<h2 class="mt-40">{{ . | markdownify }}</h2>{{ end }}
         {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
         {{ with .button }}
-        {{ if .enable }}
-        <a href="{{ .link | relURL }}" class="btn btn-small mt-20">{{ .label }}</a>
-        {{ end }}
+        <a href="{{.link}}" class="btn btn-small mt-20">{{ .label }}</a>
         {{ end }}
       </div>
-    </div>
-    <div class="row counter-box text-center mt-50">
-      {{ range .funfacts }}
-      <div class="col-md-2">
-        <div class="counter-item">
-          {{ with .icon }}<i class="{{ . }}"></i>{{ end }}
-          {{ with .count }}<h4 class="count" data-count="{{ . }}">0</h4>{{ end }}
-          {{ with .name }}<span>{{ . }}</span>{{ end }}
-        </div>
-      </div>
-      {{ end }}
     </div>
   </div>
 </section>
 {{ end }}
-{{ end }}
 
 {{ with .Params.features }}
-{{ if .enable }}
 <section class="about-feature bg-dark section dark-service">
   <div class="container">
     {{ with .title }}
@@ -55,7 +39,7 @@
       {{ range .feature_item }}
       <div class="col-md-4">
         <div class="service-item">
-          {{ with .icon }}<i class="{{ . }}"></i>{{ end }}
+          {{ with .icon }}{{ partial "svg" . }}{{ end }}
           {{ with .name }}<h4>{{ . | markdownify }}</h4>{{ end }}
           {{ with .content }}{{ . | $.Page.RenderString (dict "display" "block") }}{{ end }}
         </div>
@@ -64,7 +48,6 @@
     </div>
   </div>
 </section>
-{{ end }}
 {{ end }}
 
 <section class="testimonial section-sm">
@@ -92,7 +75,6 @@
       {{ end }}
 
       {{ with .Params.mission_vision }}
-      {{ if .enable }}
       <div class="col-md-6">
         <div class="tabCommon">
           <ul class="nav nav-tabs">
@@ -111,15 +93,8 @@
         </div>
       </div>
       {{ end }}
-      {{ end }}
     </div>
   </div>
 </section>
-
-<!-- Call to action -->
-{{ if .Params.cta.enable }}
-{{ partial "cta.html" . }}
-{{ end }}
-<!-- /Call to action -->
 
 {{ end }}

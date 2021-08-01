@@ -1,6 +1,6 @@
 <head>
   <meta charset="utf-8">
-  <title>{{ with .Title }}{{ . }}{{ else }}{{ site.Title }}{{ end }}</title>
+  <title>{{ with .Title }}{{ . }} | {{ end }}{{ site.Title }}</title>
 
   {{ "<!-- Mobile responsive metadata -->" | safeHTML }}
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -53,10 +53,9 @@
   {{ end }}
 
   {{ "<!-- Main stylesheet -->" | safeHTML }}
-  {{ $styles := slice (resources.Get "scss/style.scss") (resources.Get "scss/custom.scss") | resources.Concat "scss/bundled.scss" | toCSS | minify -}}
+  {{ $styles := resources.Get "scss/style.scss" | toCSS | minify -}}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
 
   {{ "<!-- Favicon -->" | safeHTML }}
   {{ partial "favicon.html" . }}
-
 </head>

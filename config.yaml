@@ -1,0 +1,64 @@
+title: SVI
+copyright: |
+  &copy; 2021 SVI. All Rights Reserved.
+
+  Website built by Hugo using [Airspace Theme](https://github.com/themefisher/airspace-hugo)
+
+menu:
+  main:
+    - name: About
+      weight: 2
+      url: /about
+    - name: Contact
+      weight: 6
+      url: /contact
+
+params:
+  logo: images/logo.png
+  logo_width: 150px
+  description: This is meta description
+  author: SVI
+  image: images/logo.png
+  contact:
+    phone: 0124857985320
+    email: demo@email.com
+    form:
+      enable: true
+      use_netlify: true
+      action: '#'
+      success_image: images/paper-plane.svg
+  cookies:
+    enable: true
+    expire_days: 2
+  counter:
+    enable: true
+    username: ''
+  plugins:
+    css:
+      - link: plugins/bootstrap/css/bootstrap.min.css
+        attributes: media='screen'
+      - link: plugins/ionicons/css/ionicons.min.css
+        attributes: ''
+      - link: plugins/magnific-popup/magnific-popup.min.css
+        attributes: ''
+      - link: plugins/slick/slick.css
+        attributes: ''
+    js:
+      - link: plugins/jquery/jquery.min.js
+        attributes: ''
+      - link: plugins/bootstrap/js/bootstrap.min.js
+        attributes: ''
+      - link: plugins/slick/slick.min.js
+        attributes: ''
+      - link: plugins/magnific-popup/magnific-popup.min.js
+        attributes: ''
+      - link: plugins/shuffle/shuffle.min.js
+        attributes: ''
+
+disableKinds:
+  - taxonomy
+  - term
+
+module:
+  imports:
+    - path: github.com/UtkarshVerma/hugo-modules/svg-icon-system
