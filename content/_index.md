@@ -39,8 +39,8 @@ service:
     - icon : fas fa-file-invoice-dollar
       name: Tax Exempted
       content: |
-        The investment you make with us is fully exempted from any tax obligations as per AMFI, SEBI and Income Tax Act, 1969.
-
+        Tax exemption upto 1.5 lakh available in mutual fund ELSS and get high returns from any other investments for exhibit of 80C.
+ 
     - icon : fas fa-rupee-sign
       name: Income Compounding
       content: |
