@@ -21,7 +21,7 @@ params:
   image: images/logo.png
   contact:
     phone: 0124857985320
-    email: demo@email.com
+    email: suchitashines@gmail.com
     form:
       enable: true
       use_netlify: true
