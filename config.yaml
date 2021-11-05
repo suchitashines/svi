@@ -22,11 +22,11 @@ params:
   contact:
     phone: 9307095119
     email: suchitashines@gmail.com
-    form:
-      enable: false
-      use_netlify: true
-      action: '#'
-      success_image: images/paper-plane.svg
+    #form:
+    #  enable: false
+    #  use_netlify: true
+    #  action: '#'
+    #  success_image: images/paper-plane.svg
   cookies:
     enable: true
     expire_days: 2
